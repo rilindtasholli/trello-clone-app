@@ -53,7 +53,7 @@ export default {
 }
 
 .task-bg {
-  @apply pin absolute;
+  @apply pin fixed;
   background: rgba(0,0,0,0.5);
 }
 </style>

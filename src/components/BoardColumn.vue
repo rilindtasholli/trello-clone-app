@@ -7,8 +7,13 @@
         fromColumnIndex: columnIndex
       }"
     >
-      <div class="flex items-center mb-2 font-bold">
-        {{ column.name }}
+      <div class="flex justify-between w-full mb-3">
+        <div class="flex items-center mb-2 font-bold">
+          {{ column.name }}
+        </div>
+        <button @click="deleteColumn" class="mx-3">
+          <font-awesome-icon icon="trash" color="gray" />
+        </button>
       </div>
       <div class="list-reset">
         <ColumnTask
@@ -52,6 +57,11 @@ export default {
         name: e.target.value
       })
       e.target.value = ''
+    },
+    deleteColumn () {
+      if (confirm('Are you sure you want to delete column?')) {
+        this.$store.commit('DELETE_COLUMN', { columnId: this.columnIndex })
+      }
     }
   }
 }

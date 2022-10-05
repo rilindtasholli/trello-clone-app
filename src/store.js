@@ -52,6 +52,20 @@ export default new Vuex.Store({
       const columnList = state.board.columns
       const columnToMove = columnList.splice(fromColumnIndex, 1)[0]
       columnList.splice(toColumnIndex, 0, columnToMove)
+    },
+    DELETE_TASK (state, { taskId }) {
+      state.board.columns.forEach((column) => {
+        column.tasks.every((task) => {
+          if (task.id === taskId) {
+            column.tasks.splice(column.tasks.indexOf(task), 1)
+            return false
+          }
+          return true
+        })
+      })
+    },
+    DELETE_COLUMN (state, { columnId }) {
+      state.board.columns.splice(columnId, 1)
     }
   }
 })

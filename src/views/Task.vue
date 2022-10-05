@@ -1,11 +1,17 @@
 <template>
   <div class="task-view">
     <div class="flex flex-col flex-grow items-start justify-between px-4">
-      <input
-        @change="updateTaskProperty($event, 'name')"
-        @keyup.enter="updateTaskProperty($event, 'name')"
-        type="text" :value="task.name"
-        class="p-2 w-full mr-2 flex-grow text-xl font-bold">
+      <div class="flex w-full">
+        <input
+          @change="updateTaskProperty($event, 'name')"
+          @keyup.enter="updateTaskProperty($event, 'name')"
+          type="text" :value="task.name"
+          class="p-2 w-full mr-2 flex-grow text-xl font-bold"
+        >
+        <button @click="deleteTask" class="mx-3">
+          <font-awesome-icon icon="trash" color="indianred" />
+        </button>
+      </div>
 
       <textarea @change="updateTaskProperty($event, 'description')" class="relative w-full bg-transparent px-2 border mt-2 h-64 border-none leading-normal" :value="task.description" />
     </div>
@@ -28,6 +34,12 @@ export default {
         key,
         value: e.target.value
       })
+    },
+    deleteTask () {
+      if (confirm('Are you sure you want to delete task?')) {
+        this.$store.commit('DELETE_TASK', { taskId: this.$route.params.id })
+        this.$router.push('/')
+      }
     }
   }
 }

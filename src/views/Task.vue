@@ -6,14 +6,20 @@
           @change="updateTaskProperty($event, 'name')"
           @keyup.enter="updateTaskProperty($event, 'name')"
           type="text" :value="task.name"
-          class="p-2 w-full mr-2 flex-grow text-xl font-bold"
+          class="py-2 px-4 rounded shadow-inner w-full mr-2 border flex-grow text-xl font-bold"
+          placeholder="Task name"
         >
         <button @click="deleteTask" class="mx-3">
           <font-awesome-icon icon="trash" color="indianred" />
         </button>
       </div>
 
-      <textarea @change="updateTaskProperty($event, 'description')" class="relative w-full bg-transparent px-2 border mt-2 h-64 border-none leading-normal" :value="task.description" />
+      <textarea
+        @change="updateTaskProperty($event, 'description')"
+        class="relative rounded border shadow-inner w-full py-2 px-4 mt-2 h-64 leading-normal"
+        :value="task.description"
+        placeholder="Task description..."
+      />
     </div>
   </div>
 </template>
@@ -46,7 +52,7 @@ export default {
 </script>
 <style>
 .task-view {
-  @apply relative flex flex-row bg-white pin mx-4 m-32 mx-auto py-4 text-left rounded shadow;
+  @apply relative flex flex-row pin mx-4 m-32 mx-auto py-4 text-left rounded shadow bg-white;
   max-width: 700px;
 }
 </style>

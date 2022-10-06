@@ -9,10 +9,10 @@
       }"
       @click.native="goToTask(task)"
     >
-      <span class="w-full flex-no-shrink font-bold">
+      <span class="w-full flex-no-shrink font-bold truncate">
         {{ task.name }}
       </span>
-      <p v-if="task.description" class="w-full flex-no-shrink mt-1 text-sm">
+      <p v-if="task.description" class="w-full flex-no-shrink mt-1 text-sm truncate">
         {{ task.description }}
       </p>
     </AppDrag>

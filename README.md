@@ -1,29 +1,9 @@
-# watch-us-build-trello
+# Trello Clone App
+This project is a trello clone build with VueJS
 
-## Project setup
-```
-yarn install
-```
+## Live Site
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
+Live Site: [Open Trello Clone App](https://github.com/Code-Pop/watch-us-build-trello)
 
 ### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Initial project is from a [Vue Mastery Course](https://github.com/Code-Pop/watch-us-build-trello)

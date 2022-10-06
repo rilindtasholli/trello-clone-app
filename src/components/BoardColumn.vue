@@ -67,9 +67,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .column {
-  @apply bg-grey-light p-2 mr-4 text-left shadow rounded;
-  min-width: 350px;
+  @apply p-2 mr-4 text-left shadow rounded;
+  width: 350px;
+  background-color: rgba(226, 227, 228, 0.719);
 }
 </style>

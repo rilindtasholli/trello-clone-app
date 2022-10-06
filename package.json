@@ -1,5 +1,6 @@
 {
   "name": "trello-clone-app",
+  "author": "Rilind Tasholli",
   "version": "0.1.0",
   "private": true,
   "scripts": {

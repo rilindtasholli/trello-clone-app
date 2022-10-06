@@ -1,13 +1,17 @@
 <template>
-  <div class="flex justify-around bg-grey p-2 shadow">
-    <h1>
-      <font-awesome-icon icon="table" class="mx-1"/>
-      Trello Clone App
-    </h1>
+  <div class="header">
     <button @click="resetBoard">
       <font-awesome-icon icon="retweet" />
       Reset
     </button>
+    <h1>
+      <font-awesome-icon icon="table" class="mx-1"/>
+      Trello Clone App
+    </h1>
+    <a href="https://www.github.com/rilindtasholli" target="_blank">
+      <font-awesome-icon icon="code" />
+      Rilind Tasholli
+    </a>
   </div>
 </template>
 
@@ -25,8 +29,13 @@ export default {
 </script>
 
 <style scoped>
-button{
-  @apply outline-none rounded-full px-4 py-2 bg-grey-light;
+.header {
+  @apply flex justify-around p-3 shadow;
+  background-color: rgba(165, 194, 194, 0.884);
+}
+button,
+a{
+  @apply outline-none rounded-full px-4 py-2 bg-grey-light text-black no-underline;
   transition: 0.3s;
 }
 button:active{

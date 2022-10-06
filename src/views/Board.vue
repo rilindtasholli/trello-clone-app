@@ -1,30 +1,27 @@
 <template>
-  <div class="min-h-full bg-teal-dark">
-    <Header/>
-    <div class="board h-full">
-      <div class="flex flex-row items-start">
-        <BoardColumn
-          v-for="(column, $columnIndex) of board.columns"
-          :key="$columnIndex"
-          :column="column"
-          :columnIndex="$columnIndex"
-          :board="board"
-        />
+  <div class="board">
+    <div class="flex flex-row items-start">
+      <BoardColumn
+        v-for="(column, $columnIndex) of board.columns"
+        :key="$columnIndex"
+        :column="column"
+        :columnIndex="$columnIndex"
+        :board="board"
+      />
 
-        <div class="column flex">
-          <input
-            type="text"
-            class="p-2 mr-2 flex-grow"
-            placeholder="New Column Name"
-            v-model="newColumnName"
-            @keyup.enter="createColumn"
-          >
-        </div>
+      <div class="column flex">
+        <input
+          type="text"
+          class="shadow rounded p-2 flex-grow"
+          placeholder="+ Enter new column"
+          v-model="newColumnName"
+          @keyup.enter="createColumn"
+        >
       </div>
+    </div>
 
-      <div class="task-bg" v-if="isTaskOpen" @click.self="close">
-        <router-view/>
-      </div>
+    <div class="task-bg" v-if="isTaskOpen" @click.self="close">
+      <router-view/>
     </div>
   </div>
 </template>
@@ -32,12 +29,10 @@
 <script>
 import { mapState } from 'vuex'
 import BoardColumn from '@/components/BoardColumn'
-import Header from '@/components/Header'
 
 export default {
   components: {
-    BoardColumn,
-    Header
+    BoardColumn
   },
   data () {
     return {
@@ -67,6 +62,6 @@ export default {
 
 <style lang="css">
 .board {
-  @apply p-4 h-full overflow-auto;
+  @apply p-4 overflow-auto h-full;
 }
 </style>
